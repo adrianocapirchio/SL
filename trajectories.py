@@ -33,15 +33,15 @@ ataxia = False
 actETA =  8.0 * 10 ** ( -1)
 critETA = 8.0 * 10 ** ( -4)
 cbETA   = 8.0 * 10 ** ( -1)
-proprio_units = 101**2
-LMA = 400
+proprio_units = 151**2
+LMA = 300
 
 goal_range = 0.03
 
 seed = 0
-training_epoch = 0
+training_epoch = 22
 max_epoch = training_epoch + 60
-max_step = 200
+max_step = 250
 starting_epoch = training_epoch
 start_plotting= training_epoch
 
@@ -340,7 +340,7 @@ if __name__ == "__main__":
              #   ax9.set_xlim([0,max_step])
               #  ax9.set_xticks(np.arange(0, max_step, 20))
               #  ax9.set_ylim([np.deg2rad(0), np.deg2rad(180)])
-                
+                """
                 Trajectories_plot = plt.figure("Trajectories Plot", figsize=(16     ,16))
         #        plt.title('trajectories trial=%s ataxia=%s' % (trial, ataxia))
                 trajectories_plot  =  Trajectories_plot.add_subplot(111)
@@ -372,11 +372,11 @@ if __name__ == "__main__":
                 
                 rewardCircle_t = plt.Circle((gameGoalPos), goal_range, color = 'red')  
                 trajectories_plot.add_artist(rewardCircle_t)
-                
+                """
                 
              #   lin_index = plt.figtext(.30, .20, "linearity index = %s" % (linearityIndex), style='italic', bbox={'facecolor':'lightblue'})
 
-                
+                """                
                 plt.figure()
                 plt.title('linear velocity trial=%s ataxia=%s' % (trial, ataxia))
                 plt.xlim([0,max_step])
@@ -405,5 +405,5 @@ if __name__ == "__main__":
                 if cerebellum == True:                 
                     plt.plot(np.trim_zeros(trialCerebAngles[1]), label="SL elbow output", color='orange')
                 plt.legend(loc='lower right')
-                
+                """
                 

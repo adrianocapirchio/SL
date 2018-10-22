@@ -41,12 +41,12 @@ noise = True
 
 cerebellum = True
 ataxia = False
-ataxia_mag = 15.0
+ataxia_mag = 30.0
 tDCS = False
 tDSC_mag = 1.2
 
 
-max_seed = 20
+max_seed = 1
 training_epoch  = 1000
 max_epoch = training_epoch + 60
 
@@ -62,11 +62,11 @@ LMA = 300
 epsi = 0.0
 
 
-Kp1 = 5.0
-Kd1 = 0.5
+Kp1 = 10.0
+Kd1 = 1.0
 
-Kp2 = 5.0
-Kd2 = 0.5
+Kp2 = 10.0
+Kd2 = 1.0
 
 goal_range = 0.03
 
@@ -642,7 +642,7 @@ if __name__ == "__main__":
                             else:                                 
                                 cb.spreadingtDCS(tDSC_mag) 
                     
-                            cb.tau1 = np.random.normal(ataxia_mag, ataxia_mag /3.0 )# 1. + np.abs(np.random.normal(0.0, ataxia_mag)) ##                           
+                            cb.tau1 = np.random.normal(ataxia_mag, ataxia_mag /4.0 )# 1. + np.abs(np.random.normal(0.0, ataxia_mag)) ##                           
                             if cb.tau1 < 1.0:
                                 cb.tau1 = 1.0
                             
