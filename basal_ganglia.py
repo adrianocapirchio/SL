@@ -42,7 +42,7 @@ class actorCritic:
             
             self.proprio_state = np.array([])
             
-            self.proprio_input_units = 201**2
+            self.proprio_input_units = 101**2
             self.proprio_intervals = int(np.sqrt(self.proprio_input_units)) -1
             self.proprio_sigma = 1. / (self.proprio_intervals * 2)
             self.proprio_grid = utils.buildGrid(0.0, 1.0, int(np.sqrt(self.proprio_input_units)), 0.0, 1.0, int(np.sqrt(self.proprio_input_units))).reshape(2,self.proprio_input_units)

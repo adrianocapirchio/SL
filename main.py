@@ -41,7 +41,7 @@ noise = True
 
 cerebellum = True
 ataxia = False
-ataxia_mag = 30.0
+ataxia_mag = 35.0
 tDCS = False
 tDSC_mag = 1.2
 
@@ -75,7 +75,7 @@ start_ataxia = max_epoch - 40
 start_tDCS = max_epoch - 20 
 avg_stats = 20
 
-muscolar_noise = 0.001
+muscolar_noise = 0.002
 
 load_weights = False
 save_data = True
@@ -105,6 +105,11 @@ if __name__ == "__main__":
          #   cb.init(multinet, bg.curr_state)
             
         if load_weights == True:
+            
+            training_epoch = 0
+            max_epoch = training_epoch + 60
+            start_ataxia = max_epoch - 40
+            start_tDCS = max_epoch - 20 
             
             noise = False
             save_data = False
@@ -662,8 +667,8 @@ if __name__ == "__main__":
                     
                     
                     "compute noised signals and convert to arm desired angles"
-                    desiredAngles[0] = utils.changeRange(utils.limitRange(netOut[0] + bg.curr_noise[0] , 0., 1.), 0., 1., shoulder_range[0] , shoulder_range[1])
-                    desiredAngles[1] = utils.changeRange(utils.limitRange(netOut[1] + bg.curr_noise[1] ,  0., 1.), 0., 1.,  elbow_range[0] , elbow_range[1])
+                    desiredAngles[0] = utils.changeRange(utils.limitRange(netOut[0] + bg.curr_noise[0] + np.random.normal(0.0, muscolar_noise, 1) , 0., 1.), 0., 1., shoulder_range[0] , shoulder_range[1])
+                    desiredAngles[1] = utils.changeRange(utils.limitRange(netOut[1] + bg.curr_noise[1] + np.random.normal(0.0, muscolar_noise, 1),  0., 1.), 0., 1.,  elbow_range[0] , elbow_range[1])
                     
                     "load perceptron teaching input"
                     if cerebellum == True:                            

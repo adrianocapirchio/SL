@@ -33,7 +33,7 @@ ataxia = False
 actETA =  8.0 * 10 ** ( -1)
 critETA = 8.0 * 10 ** ( -4)
 cbETA   = 8.0 * 10 ** ( -1)
-proprio_units = 151**2
+proprio_units = 101**2
 LMA = 300
 
 goal_range = 0.03
